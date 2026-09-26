@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banu Aksoy — BNDECO Dijital Kartvizit</title>
+    
+    <!-- Sosyal Medya Paylaşım Ayarları -->
+    <meta property="og:title" content="Banu Aksoy — BNDECO">
+    <meta property="og:description" content="Baby, Kids & Teen Ev Tekstili · GOTS Organik Sertifikalı Üretim">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f6f2;
+            color: #2a2a2a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.5rem 3.5rem;
+        }
+
+        /* Header ve Vektörel Logo */
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .brand-logo {
+            width: 130px;
+            height: 130px;
+        }
+
+        .header-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #7a736a;
+            font-weight: 600;
+        }
+
+        /* Ana Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            margin-bottom: 1.2rem;
+        }
+
+        .profile-subtitle {
+            font-size: 1.05rem;
+            color: #4a453f;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .location-tag {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8c857b;
+            font-weight: 600;
+        }
+
+        /* Sağ Linkler */
+        .links-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-item {
+            border-bottom: 1px solid #e0dad0;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .link-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #8c857b;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .link-title {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: color 0.2s;
+        }
+
+        .link-title:hover {
+            color: #4a1e28;
+        }
+
+        .link-desc {
+            font-size: 0.85rem;
+            color: #7a736a;
+            margin-top: 0.3rem;
+        }
+
+        /* Alt Alan & Butonlar */
+        .footer-section {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0dad0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .actions-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .qr-box {
+            width: 65px;
+            height: 65px;
+            background-color: #fff;
+            border: 1px solid #e0dad0;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .qr-box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.7rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #4a1e28;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #33141c;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #2a2a2a;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+        }
+
+        .btn-secondary:hover {
+            color: #4a1e28;
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: #8c857b;
+        }
+
+        /* Mobil Uyum */
+        @media (max-width: 800px) {
+            body {
+                padding: 1.5rem;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .profile-section h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <!-- Logo (Doğrudan Kodun İçinde Dahili Vektörel SVG) -->
+        <header class="header-top">
+            <div class="brand-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="width: 100%; height: 100%;">
+                    <rect x="12" y="12" width="376" height="376" fill="none" stroke="#1a1a1a" stroke-width="7"/>
+                    <text x="50" y="185" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="140" font-weight="400" fill="#1a1a1a" letter-spacing="-2">BN</text>
+                    <text x="140" y="250" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="75" font-weight="400" fill="#1a1a1a" letter-spacing="-1">DECO</text>
+                    <!-- Taç İkonu -->
+                    <g transform="translate(295, 175) scale(0.85)">
+                        <path d="M 5 25 L 15 5 L 30 18 L 45 5 L 55 25 L 58 32 L 2 32 Z" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+                        <circle cx="15" cy="5" r="3" fill="#1a1a1a"/>
+                        <circle cx="30" cy="18" r="3" fill="#1a1a1a"/>
+                        <circle cx="45" cy="5" r="3" fill="#1a1a1a"/>
+                    </g>
+                    <text x="200" y="340" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="28" font-weight="400" letter-spacing="4" text-anchor="middle" fill="#1a1a1a">BABY - KIDS - TEEN</text>
+                </svg>
+            </div>
+            <span class="header-tag">BANU AKSOY · BNDECO</span>
+        </header>
+
+        <!-- Ana Bilgiler -->
+        <main class="main-grid">
+            <section class="profile-section">
+                <h1>Banu<br>Aksoy</h1>
+                <p class="profile-subtitle">
+                    Firma Sahibi · Baby, Kids & Teen Ev Tekstili<br>
+                    GOTS Organik & Sürdürülebilir Üretim
+                </p>
+                <div class="location-tag">
+                    GÜR-OL İPLİK NAKIŞ VE TEKSTİL LTD · TORBALI, İZMİR
+                </div>
+            </section>
+
+            <section class="links-section">
+                <div class="link-item">
+                    <div class="link-number">01 / BEBEK, ÇOCUK & TEEN</div>
+                    <a href="https://www.bndeco.com.tr" target="_blank" class="link-title">
+                        BNDECO Web Sitesi ↗
+                    </a>
+                    <p class="link-desc">Ev tekstil koleksiyonları ve ürün detayları</p>
+                </div>
+
+                <div class="link-item">
+                    <div class="link-number">02 / SERTİFİKALI ÜRETİM</div>
+                    <a href="https://www.bndeco.com.tr" target="_blank" class="link-title">
+                        GOTS Organik & Recycled ↗
+                    </a>
+                    <p class="link-desc">Sürdürülebilir ve çevre dostu üretim standartları</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Alt İletişim / Butonlar -->
+    <footer class="footer-section">
+        <div class="actions-bar">
+            <!-- QR Kod -->
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.bndeco.com.tr" alt="QR Code">
+            </div>
+
+            <!-- Eylem Butonları -->
+            <div class="buttons-group">
+                <a href="https://api.whatsapp.com/send?text=Merhaba,%20Banu%20Aksoy%20-%20BNDECO%20dijital%20kartvizit:%20https://www.bndeco.com.tr" target="_blank" class="btn btn-primary">
+                    Share via WhatsApp ↗
+                </a>
+                <a href="https://instagram.com/bndeco" target="_blank" class="btn btn-secondary">
+                    Instagram ↗
+                </a>
+                <a href="mailto:banu@bndeco.com" class="btn btn-secondary">
+                    Email ↗
+                </a>
+                <button onclick="downloadVCard()" class="btn btn-secondary">
+                    Save contact ↵
+                </button>
+            </div>
+        </div>
+        <div class="footer-note">
+            GÜR-OL İplik Nakış ve Tekstil Ltd. Şti. Torbalı / İzmir
+        </div>
+    </footer>
+
+    <!-- Rehbere Kaydetme (vCard) -->
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Banu Aksoy
+ORG:GÜR-OL İPLİK NAKIŞ VE TEKSTİL LTD / BNDECO
+TITLE:Firma Sahibi
+EMAIL;TYPE=INTERNET,WORK:banu@bndeco.com
+URL:https://www.bndeco.com.tr
+ADR;TYPE=WORK:;;Torbalı;İzmir;;;Turkey
+NOTE:Baby, Kids & Teen Ev Tekstili - GOTS Organik Sertifikalı Üretim
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute('download', 'Banu_Aksoy_BNDECO.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
